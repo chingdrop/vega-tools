@@ -6,7 +6,7 @@ from typing import Optional, Union, Dict, Any
 
 import pandas as pd
 
-from common.settings import DATA_DIRECTORY
+from config.settings.settings import DATA_DIR
 from common.utils.rest_utils import RestAdapter, RestAdapterConfig
 
 
@@ -23,7 +23,7 @@ class CensusNamesApi:
 
     Args:
         year: Must be '2000' or '2010'.
-        save_file: Path where the names list will be written (defaults to DATA_DIRECTORY / 'census_{year}_names.txt').
+        save_file: Path where the names list will be written (defaults to DATA_DIR / 'census_{year}_names.txt').
         rest_adapter: Optional RestAdapter instance; if None one will be created.
     """
 
@@ -44,7 +44,7 @@ class CensusNamesApi:
         # Determine where to save the output
         default_name = f"census_{year}_names.txt"
         if save_file is None:
-            self.save_file = DATA_DIRECTORY / default_name
+            self.save_file = DATA_DIR / default_name
         else:
             self.save_file = Path(save_file)
 
