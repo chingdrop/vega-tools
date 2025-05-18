@@ -8,9 +8,9 @@ from click import Context
 from common.pandas_tools import read_structured_file, write_structured_file, audit_images, search_report_text
 from common.text_tools import print_lines_with_keywords, print_text_with_keywords, white_rabbit_parse_report, \
     PhiSanitizer
-from common.utils.config_loader import ConfigLoader
-from common.utils.enums import DICOM_2D_SERIES_DESCRIPTIONS, DICOM_3D_SERIES_DESCRIPTIONS
-from common.utils.files_and_storage import read_text_from_file
+from config.django.config_loader import ConfigLoader
+from config.django.enums import DICOM_2D_SERIES_DESCRIPTIONS, DICOM_3D_SERIES_DESCRIPTIONS
+from config.django.files_and_storage import read_text_from_file
 
 
 @click.group()

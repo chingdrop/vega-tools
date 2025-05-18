@@ -5,8 +5,8 @@ import pandas as pd
 from rich.console import Console
 from rich.text import Text
 
-from common.utils.config_loader import ConfigLoader
-from common.utils.enums import load_census_names
+from config.django.config_loader import ConfigLoader
+from config.django.enums import load_census_names
 from common.utils.regex_utils import compile_keywords_pattern, mask_regex_pattern, mask_keywords, NameMasker
 
 
