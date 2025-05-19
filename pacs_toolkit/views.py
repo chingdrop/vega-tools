@@ -43,5 +43,6 @@ def audit_series_view(request):
     return render(request, "pacs_toolkit/audit_series.html", {"form": form})
 
 
+# ToDo - Create a homepage where you can navigate the different views in the app.
 def index(request):
     return HttpResponse("Hello, world. You're at the PACS Toolkit index.")

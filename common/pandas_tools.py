@@ -6,6 +6,8 @@ from pandas import Series, DataFrame
 
 from common.utils.regex_utils import compile_keywords_pattern
 
+# ToDo - Create functions that will handle text stream handlers.
+
 Reader = Callable[..., pd.DataFrame]
 READERS: Dict[str, Reader] = {
     "csv": pd.read_csv,
@@ -18,6 +20,7 @@ READERS: Dict[str, Reader] = {
 }
 
 
+# ToDo - Add an option to delete the file after returning the DataFrame.
 def read_structured_file(
         file_path: Union[str, Path],
         file_type: Optional[str] = None,
