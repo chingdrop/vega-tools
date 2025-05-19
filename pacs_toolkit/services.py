@@ -1,12 +1,11 @@
 import numpy as np
 import pandas as pd
 
-from common.pandas_tools import read_structured_file, audit_images
+from common.pandas_tools import audit_images
 from config.django.enums import DICOM_2D_SERIES_DESCRIPTIONS, DICOM_3D_SERIES_DESCRIPTIONS
 
 
-def audit_series_by_study_df(input_path: str) -> pd.DataFrame:
-    df = read_structured_file(input_path)
+def audit_series_by_study_df(df: pd.DataFrame) -> pd.DataFrame:
     df.replace('<NONE>', np.nan, inplace=True)
     df.drop('File', axis=1, inplace=True)
     df.rename(
